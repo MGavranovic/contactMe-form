@@ -34,7 +34,7 @@ form {
   width: 48%;
 }
 
-form .data {
+.field .data {
   width: 100%;
   padding: 18px;
   border: 2px solid turquoise;
@@ -45,6 +45,10 @@ form .data {
   margin: 12px 0;
 }
 
+.field.error .data {
+  border-color: red;
+}
+
 .data::placeholder {
   color: white, 0.5;
 }
@@ -53,7 +57,7 @@ form .data {
   color: white;
 }
 
-.field .error {
+.field .error-txt {
   font-size: 14px;
   color: red;
   text-align: left;
@@ -61,7 +65,10 @@ form .data {
   display: none;
 }
 
-.email-text .error {
+.field.error .error-txt {
+  display: block;
+}
+.email-text .error-txt {
   margin-top: -10px;
 }
 

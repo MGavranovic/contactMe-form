@@ -24,7 +24,7 @@ const sendEmail = function () {
     Subject: subject.value,
     Body: msgBody,
   }).then((message) => {
-    if (message == 'OK') {
+    if (message === 'OK') {
       Swal.fire({
         title: 'Success!',
         text: 'Message sent successfully!!',
@@ -34,10 +34,79 @@ const sendEmail = function () {
   });
 };
 
+// Check Input looks a bit scuffed atm and willl have to go over this part of code
+// I will prob have to split this checkInput in 5 dif func to be
+// able to check for every field separately as it checks everything at
+// the same time in this state
+const checkInput = function () {
+  const data = document.querySelectorAll('.data');
+
+  for (const item of data) {
+    if (item.value === '') {
+      item.classList.add('error');
+      item.parentElement.classList.add('error');
+    }
+
+    if (data[1].value !== '') {
+      checkEmail();
+    }
+
+    data[1].addEventListener('keyup', function () {
+      checkEmail();
+    });
+
+    item.addEventListener('keyup', function () {
+      if (item.value !== '') {
+        item.classList.remove('error');
+        item.parentElement.classList.remove('error');
+      } else {
+        item.classList.add('error');
+        item.parentElement.classList.add('error');
+      }
+    });
+  }
+};
+
+const checkEmail = function () {
+  const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
+  const errorEmail = document.querySelector('.error-txt.email');
+
+  if (!emailAddress.value.match(emailRegex)) {
+    emailAddress.classList.add('error');
+    emailAddress.parentElement.classList.add('error');
+
+    if (emailAddress.value !== '') {
+      errorEmail.innerHTML = 'Enter a valid email!';
+    } else {
+      errorEmail.innerHTML = `Email Address field can't be empty!`;
+    }
+  } else {
+    emailAddress.classList.remove('error');
+    emailAddress.parentElement.classList.remove('error');
+  }
+};
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  checkInput();
 
-  sendEmail();
+  if (
+    !fullName.classList.contains('error') &&
+    !phoneNumber.classList.contains('error') &&
+    !subject.classList.contains('error') &&
+    !emailAddress.classList.contains('error') &&
+    !msg.classList.contains('error')
+  ) {
+    sendEmail();
+
+    form.reset();
+    return false;
+  }
+});
+
+form.addEventListener('keyup', function (e) {
+  e.preventDefault();
+  checkInput();
 });
 
 if (module.hot) {
