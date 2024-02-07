@@ -1,0 +1,4 @@
+node_modules
+smtppw.txt
+dist
+.parcel-cache

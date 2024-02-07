@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background: #1f242d;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+form {
+  width: 500px;
+  text-align: center;
+}
+
+.input-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-field {
+  width: 48%;
+}
+
+form .data {
+  width: 100%;
+  padding: 18px;
+  border: 2px solid turquoise;
+  background: transparent;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.data::placeholder {
+  color: white, 0.5;
+}
+
+.data {
+  color: white;
+}
+
+.field .error {
+  font-size: 14px;
+  color: red;
+  text-align: left;
+  margin: -5px 0 10px;
+  display: none;
+}
+
+.email-text .error {
+  margin-top: -10px;
+}
+
+.email-text .data {
+  resize: none;
+}
+
+.btn-send-msg {
+  padding: 16px 32px;
+  border: 2px solid turquoise;
+  background: #374257;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: grey;
+  letter-spacing: 1px;
+  margin-top: 12px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px white;
+  transition: 0.5s;
+}
+
+.btn-send-msg:hover {
+  box-shadow: none;
+}

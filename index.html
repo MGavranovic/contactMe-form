@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="#">
+      <h1>Contact Me!</h1>
+      <div class="input-box">
+        <div class="input-field field">
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="data"
+            id="name"
+            autocomplete="off"
+          />
+          <div class="error">Full Name field can't be empty!</div>
+        </div>
+        <div class="input-field field">
+          <input
+            type="text"
+            placeholder="Email Address"
+            class="data"
+            id="email"
+            autocomplete="off"
+          />
+          <div class="error">Email Address field can't be empty!</div>
+        </div>
+      </div>
+      <div class="input-box">
+        <div class="input-field field">
+          <input
+            type="text"
+            placeholder="Phone Number"
+            class="data"
+            id="phone"
+            autocomplete="off"
+          />
+          <div class="error">Phone Number field can't be empty!</div>
+        </div>
+        <div class="input-field field">
+          <input
+            type="text"
+            placeholder="Subject"
+            class="data"
+            id="subject"
+            autocomplete="off"
+          />
+          <div class="error">Subject field can't be empty!</div>
+        </div>
+      </div>
+      <div class="email-text field">
+        <textarea
+          name=""
+          id="message"
+          class="data"
+          cols="30"
+          rows="10"
+          placeholder="Please enter your message here!"
+          autocomplete="off"
+        ></textarea>
+        <div class="error">Message field can't be empty!</div>
+      </div>
+
+      <button class="btn-send-msg" type="submit">Send Message</button>
+    </form>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "smtpjs": "^0.0.1",
+    "sweetalert2": "^11.6.13"
+  },
+  "name": "emailingform",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Milos Gavranovic",
+  "license": "ISC",
+  "description": "This project is for testing purposes.",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
